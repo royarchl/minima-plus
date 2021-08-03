@@ -1,4 +1,4 @@
-/*
+/**
  * @name Minima+
  * @author RoyArchL (me)
  * @description Discord but with cleaner colors and a simpler look
@@ -55,7 +55,7 @@
 
 
 /* Adding "Minima+" after the watermark (top left) */
-  .typeWindows-1za-n7::after, .typeMacOS-3EmCyP::after {
+  .typeWindows-1za-n7::after {
       position: absolute;
       content: "Minima+";
       font-size: 14px;
@@ -421,6 +421,6 @@
 /* Change the ring color when speaking in vc (@_david_) */
   .avatarSpeaking-2IGMRN {box-shadow: inset 0 0 0 2px var(--unread-color),inset 0 0 0 3px var(--background-secondary)}                     /* Servers */ 
   .border-Jn5IOt.speaking-B2MXPi {box-shadow: inset 0 0 0 2px var(--unread-color),inset 0 0 0 3px var(--background-floating)}              /* DMs */
-  .border-3dQmSY.speaking-WDn8Wm {box-shadow: inset 0 0 0 2px var(--unread-color), inset 0 0 0 3px #000}                                 /* Grid call */ 
+  .border-3dQmSY.speaking-WDn8Wm {box-shadow: inset 0 0 0 2px var(--unread-color), inset 0 0 0 3px #000}                                   /* Grid call */ 
   .avatarSpeaking-2c8-9i {box-shadow: inset 0 0 0 2px var(--unread-color),inset 0 0 0 3px var(--background-secondary)}                     /* User menu (bottom left) */
   .speaking-3dBKhR {box-shadow: inset 0 0 0 2px var(--unread-color),inset 0 0 0 3px var(--background-secondary)}                           /* Voice users */
