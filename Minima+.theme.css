@@ -1,0 +1,426 @@
+/*
+ * @name Minima+
+ * @author RoyArchL (me)
+ * @description Discord but with cleaner colors and a simpler look
+ * @version 4.0.4
+ */
+ 
+ 
+/* \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/  */
+/* TRANSPARENCY IS REQUIRED FOR THIS THEME! Go into the BD Settings, enable Transparency and then restart Discord. */
+/* /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\ /\  */
+
+/* 
+ * FOR BEST RESULTS get the following plugins from https://betterdiscord.app.plugins
+ * BetterFormattingRedux, BetterNsfwTag, DashToSpaceInChannelName, DateViewer, GameActivityToggle, HideEmbedLink
+ * PinDMs, QuickMuteChannels, ReadAllNotificationsButton, SpotifyControls, SupressReplyMentions (just QoL tbh)
+ * TypingIndicator, and WhoReacted
+ */
+
+
+/* Additional comments starting col. 140 (scroll to the right) */
+
+
+@import url('https://mwittrien.github.io/BetterDiscordAddons/Themes/_res/SettingsIcons.css');
+@import url('https://Goose-Nest.github.io/GT-RevertRebrand/src/components/wordmark.css');
+@import url('https://mwittrien.github.io/BetterDiscordAddons/Themes/SettingsModal/SettingsModal.css');
+
+
+/* Variable setting for later use*/
+  :root {
+      --settingsiconssize: 18px;
+      --settingsiconsgap: 14px;
+
+      /* from SettingsModal theme by DevilBro */
+      --settingsmodalbackground: 	transparent;			                                                                                       /* default:	transparent  (lowest bg color of changed windows, change it in case another theme turns them transparent)	*/
+	    --settingsmodalwidth: 		960px;					                                                                                           /* default:	960px  (width of the settings modal, px/vw) */
+	    --settingsmodalheight: 		80vh;					                                                                                             /* default:  80vh  (height of the settings modal, px/vh) */
+
+      /* Theme colors */
+      --discord-red: #ED4245;
+      --discord-green: #5dd995;
+      --text-positive: var(--discord-green);
+
+      --mentioned-color: #8da5fc;
+      --mentioned-hover: #aabcff;
+      --unread-color: #7289da; 
+      --unread-active: #7289da1a; /* 0.1 */
+      --unread-hover: #7289da26; /* 0.15 */
+
+      --darker-background: #12171DFF;
+      --lighter-background: #1E2731FF;
+      --hover-background: #1E273126;
+      --active-background: #1E273140;
+  }
+
+
+/* Adding "Minima+" after the watermark (top left) */
+  .typeWindows-1za-n7::after, .typeMacOS-3EmCyP::after {
+      position: absolute;
+      content: "Minima+";
+      font-size: 14px;
+      font-weight: bold;
+      top: 4px;
+      left: 71px;
+      color: var(--lighter-background);
+      transform: translateY(-8%);
+      line-height: 20px;
+  }
+
+
+/* ANIMATIONS */
+  @keyframes channel-unread {
+    0% {
+      box-shadow: 0 0 0 0 var(--unread-color);
+    }
+    70% {
+      box-shadow: 0 0 0 4px rgba(0, 0, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+  }
+
+  @keyframes channel-mention-unread {
+    0% {
+      background-color: var(--unread-hover);
+    }
+    70% {
+      background-color: rgba(0, 0, 0, 0);
+    }
+    100% {
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
+
+  @keyframes vc-current {
+    0% {
+      box-shadow: 0 0 0 0 var(--unread-color);
+    }
+    70% {
+      box-shadow: 0 0 0 8px rgba(0, 0, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+  }
+
+  @keyframes channel-mentioned-ping {
+    0% {
+      
+      filter: drop-shadow(0 0 6 var(--discord-red));
+    }
+    70% {
+      
+      filter: drop-shadow(0 0 8px var(--discord-red));
+    }
+    100% {
+      filter: drop-shadow(0 0 6 var(--discord-red));
+    }
+  }
+
+  @keyframes stage-open {
+    0% {
+      
+      filter: drop-shadow(0 0 2 var(--mentioned-color));
+    }
+    70% {
+      
+      filter: drop-shadow(0 0 8px var(--mentioned-color));
+    }
+    100% {
+      filter: drop-shadow(0 0 2 var(--mentioned-color));
+    }
+  }
+
+
+/* Enlarges Custom CSS Editor max size */
+  #floating-editor-window.resizable {
+      max-height: 85%;
+      max-width: 65%;
+  }
+  .floating-window-titlebar, .floating-window #bd-editor-controls, .floating-window.resizable {
+    background: var(--lighter-background);
+  }
+
+
+/* Altering root colors */
+  .theme-dark {
+      --background-primary: var(--darker-background);
+      --background-secondary: var(--darker-background);
+      --background-secondary-alt: var(--darker-background);
+      --background-tertiary: var(--darker-background);
+      --background-modifier-hover: var(--hover-background);         
+      --background-modifier-active: var(--active-background);       
+      --background-modifier-selected: var(--lighter-background);
+      --background-modifier-accent: var(--lighter-background);
+      --scrollbar-auto-thumb: var(--lighter-background);
+      --scrollbar-auto-track: var(--darker-background);
+      --channeltextarea-background: var(--lighter-background);
+  }
+  .bf-toolbar.bf-visible::before {background: var(--lighter-background);}                                                                  /* Color-matches BetterFormatting plugin*/
+  .username-1A8OIy {filter: grayscale(0.3) !important;}                                                                                    /* Desaturates username colors */
+  [aria-label*="mention"] .icon-1DeIlz {                                                                                                   /* Changes the color of the # icon when pinged */
+    color: var(--discord-red);                                                                                                             /**/
+    animation: 0.8s channel-mentioned-ping infinite;                                                                                       /**/
+  }                                                                                                                                        /**/
+  [aria-label*="mention"]:hover .icon-1DeIlz {color: var(--discord-red); }                                                                 /* Maintains the # icon highlighted when hovering over the channel */
+  .mentionsBadge-3tC7Mi {display: none }                                                                                                   /* Gets rid of the red ping (w/ number) next to channel when pinged */
+  .repliedMessage-VokQwo::before {border-color: var(--lighter-background);}                                                                /* Makes "reply line" in chat match theme */
+  .jumpToPresentBar-G1R9s6 {background-color: var(--brand-experiment);}                                                                    /* Makes the "JUMP TO PRESENT" bar match new Discord blue */
+  .peopleColumn-29fq28 {background-color: var(--darker-background);}                                                                       /* Makes Friends tab have the same background color */
+  .itemCard-v9viV7 {background-color: var(--lighter-background);}                                                                          /* Makes Friends Activity in Friends tab follow theme */
+  .iconBadge-3qSJIw {                                                                                                                      /* Changes server vc icon to match theme and animates it */
+    background-color: var(--unread-color) !important;                                                                                      /**/
+    animation: 1.5s vc-current infinite;                                                                                                   /**/
+  }                                                                                                                                        /**/
+  .setIdentityLink-1t8Ahd                                           {display: none }                                                       /* Gets rid of the "Set Server Nickname" option when clicking on your profile card (in a server) */
+  .mentioned-xhSam7::before                                         {display: none; }                                                      /* Gets rid of the brighter line on the left of mentions in the chat */
+  .mentioned-xhSam7 {                                                                                                                      /* Changes the color of the pinged message and gives the edges a slight curve */
+    background-color: var(--unread-active);                                                                                                /**/
+    border-radius: 6px;                                                                                                                    /**/
+  }                                                                                                                                        /**/
+  #app-mount .mentioned-xhSam7:hover, #app-mount .mentioned-xhSam7.selected-2P5D_Z {                                                       /* Slightly dims pinged message when you hover over it */
+    background-color: var(--unread-hover);                                                                                                 /**/
+    border-radius: 6px;                                                                                                                    /**/
+  }                                                                                                                                        /**/
+
+
+/* Small channel animation to right upon hover */
+  .content-3YMskv > .containerDefault--pIXnN, .content-3YMskv > .container-3JKcAb {
+    right: 0;
+    transition: right ease-in-out 0.1s;
+  }
+  .content-3YMskv > .containerDefault--pIXnN:hover, .content-3YMskv > .container-3JKcAb:hover {
+    right: -10px;
+  }
+
+
+/* Changes the color of common buttons to better represent their function */
+  [aria-label="Enable Game Activity"] .contents-18-Yxp {color: var(--discord-red);}
+  [aria-label="Mute"][aria-checked="true"] .contents-18-Yxp {color: var(--discord-red);}
+  [aria-label="Deafen"][aria-checked="true"] .contents-18-Yxp {color: var(--discord-red);}
+  [aria-label="Disconnect"] .contents-18-Yxp {color: var(--discord-red);}
+  [aria-label*="Stream"] .contents-18-Yxp {color: var(--discord-green);}
+  [aria-label="Stop Streaming"] .contents-18-Yxp {color: var(--discord-red);}
+  [aria-label="Share Your Screen"] {background-color: var(--darker-background) !important;}
+  [aria-label="Muted"] .icon-2IuuZd {color: var(--discord-red);}
+  [aria-label="Deafened"] .icon-2IuuZd {color: var(--discord-red);}
+  .content-1x5b-n [aria-label*="user"]:not([aria-label*="0"]) [aria-label*="Voice"] .icon-1DeIlz {color: var(--unread-color); animation: 2s stage-open infinite;}
+  .content-1x5b-n [aria-label*="user"] .name-23GUGE {color: #e4e4e4;}
+
+
+/* Recoloring window buttons (min, max, close) */
+  .winButtonMinMax-PBQ2gm:last-child:hover {   
+    color: #43b582e3;
+  }
+  .winButtonMinMax-PBQ2gm:nth-child(3):hover {   
+    color: #faa81ae5;
+  }
+  .winButtonClose-1HsbF-:hover {   
+    color: #d9514eff;
+    background-color: #282B2E;
+  }  
+
+
+/* Animated unread icon */
+  :root .unread-2lAfLh {
+    position: absolute;
+    top: 54%;
+    left: 5px;
+    width: 6px;
+    height: 6px;
+    z-index: 1;
+    background-color: var(--unread-color);
+    border-radius: 10px;
+    animation: 2s channel-unread infinite;
+  }
+  
+
+/* Fits stage channels to fit theme */
+  .channelNotice-2bJINM {
+    padding: 16px;
+    margin: 15px 8px 0;
+    border-radius: 6px;
+    background-color: var(--lighter-background);
+  }
+  .liveIndicator-11vCOL {
+    background-color: var(--unread-color);
+  }
+  .colorStatusGreen-2saF4_ {
+    color: var(--unread-color);
+  }
+  .joinButton-7Fa-WN {
+    display: none;
+  }
+  .iconLive-AtZKgD {
+    color: var(--unread-color) !important;
+    animation: 1.5s stage-open infinite;
+  }
+
+
+
+
+/* STUFF FROM MORE EXPERIENCED MINDS THAT WERE PROVIDED IN #CSS-SNIPPETS */
+
+
+/* Custom search animation [top right] (@Nyria) */
+  :root .container-1r6BKw.themed-ANHk51 .search-36MZv- .search-2oPWTC:not(.open-6_Y_aH) .searchBar-3dMhjb {
+    width: 27px;
+    transition: 250ms;
+    background-color: transparent;
+  }
+  :root .container-1r6BKw.themed-ANHk51 .search-36MZv- .search-2oPWTC:not(.open-6_Y_aH) .searchBar-3dMhjb .iconContainer-O4O2CN {
+    transform: scale(1.3);
+    transition: 250ms;
+  }
+  :root .container-1r6BKw.themed-ANHk51 .search-36MZv- .search-2oPWTC:not(.open-6_Y_aH) .searchBar-3dMhjb .iconContainer-O4O2CN .icon-3cZ1F_ {
+    color: var(--interactive-normal);
+  }
+  :root .container-1r6BKw.themed-ANHk51 .search-36MZv- .search-2oPWTC:not(.open-6_Y_aH):hover .searchBar-3dMhjb {
+    width: 240px;
+    background-color: var(--background-tertiary);
+  }
+  :root .container-1r6BKw.themed-ANHk51 .search-36MZv- .search-2oPWTC:not(.open-6_Y_aH):hover .searchBar-3dMhjb .iconContainer-O4O2CN {
+    transform: scale(1);
+  }
+  :root .container-1r6BKw.themed-ANHk51 .search-36MZv- .search-2oPWTC:not(.open-6_Y_aH):hover .searchBar-3dMhjb .iconContainer-O4O2CN .icon-3cZ1F_ {
+    color: var(--text-muted);
+  }
+  :root .container-1r6BKw.themed-ANHk51 .search-36MZv- .searchAnswer-3Dz2-q, :root .container-1r6BKw.themed-ANHk51 .search-36MZv- .searchFilter-2ESiM3 {
+    background-color: var(--background-primary);
+  }
+
+
+/* Search buttons to bottom (@Doggybootsy) */
+  .container-NdaZbY {
+    position:sticky;
+    bottom:0;
+    background-color: var(--background-secondary);
+    z-index:1;
+  }
+
+
+/* Round Discord Border [transparency REQUIRED] (@Leeprky) */
+  body {background-color: transparent;}
+  #app-mount{border-radius: 6px;} /* Default "12px" - Higher = More Round */
+
+
+/* Resizable Channel/DM List (@Qb) */
+  :root { --sidebar-initial-width: 270px; }                                                                                                /* Set to 240px if you DON'T have the GameActivity plugin */                                                                                           /* Best size if you use GameActivityToggle Plugin */
+  .sidebar-2K8pFh {
+      resize: horizontal;
+      width: var(--sidebar-initial-width);
+  }
+  .sidebar-2K8pFh .channel-2QD9_O { max-width: unset; }
+  .bannerImage-3KhIJ6 { width: 100%; }
+
+
+/* Hiding most of the annoying Discord buttons (@ItMeSarah and @_david_) */
+  button[aria-label="Send a gift"] {display: none;}                                                                                        /* Nitro gift button */
+  button[aria-label="Open GIF picker"] {display: none;}                                                                                    /* GIF picker button */
+  .stickerButton-3OEgwj {display: none}                                                                                                    /* Stickers Button */
+  .tutorialContainer-30WoTp+div {display: none}                                                                                            /* Server Exploration button */
+  #private-channels [href="/discovery"] {display: none}                                                                                    /* Stage Discovery Tab */
+  #private-channels [href="/library"] {display: none}                                                                                      /* Library Tab */
+  
+
+/* Shortens "jump to message" links (@_david_) */
+  [title^="https://discord.com/channels/"] {
+      line-height:0;
+      font-size:0;
+  }
+  [title^="https://discord.com/channels/"]::before {
+      content:'Jump to Message';
+      font-size:16px;
+      font-weight:700;
+  }
+
+
+/* Horizontal status picker (@Tropical) */
+  #status-picker {
+      margin-bottom: 5px;
+  }
+  #status-picker > div {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 8px;
+  }
+  .statusItem-33LqPf {
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+  }
+  .statusItem-33LqPf > svg {
+      width: 16px;
+      height: auto;
+  }
+  #status-picker .item-1tOPte {
+      margin: 0;
+      width: 25%;
+  }
+  #status-picker .status-1fhblQ,
+  #status-picker .description-2L932D,
+  #status-picker .separator-2I32lJ:nth-child(2) {
+      display: none;
+  }
+  #status-picker .separator-2I32lJ,
+  #status-picker #status-picker-custom-status {
+      display: block;
+      width: 100%;
+  }
+  #status-picker-custom-status .status-1fhblQ {
+      display: block;
+      margin-left: 6px;
+  }
+  
+
+/* Mobile-style role chips (@Tropical) */
+  .role-2irmRk {
+      border: none;
+      background-color: var(--background-tertiary);
+      border-radius: 3px;
+      padding: 6px;
+      height: 24px;
+  }
+  #app-mount .actionButton-VzECiy {
+      color: var(--interactive-normal);
+      border: 1px solid var(--background-modifier-accent);
+  }
+  #app-mount .actionButton-VzECiy:hover {
+      background-color: var(--background-modifier-hover);
+  }
+  #app-mount .actionButton-VzECiy:active {
+      background-color: var(--background-modifier-active);
+      color: var(--interactive-active);
+  }
+
+
+/* Everything Offline / Offline Revamp (@Cedrick) */
+  .tipTitle-GL9qAt{content:"";font-size: 0px;}
+  .tipTitle-GL9qAt::before{content:"Hey...";font-size: 12px;}
+  .tip-2cgoli{content:"";font-size: 0px;}
+  .tip-2cgoli::before{content: "You're Offline :c";font-size: 16px;}
+  .problems-3mgf6w.slideIn-sCvzGz{display:none;}
+  .container-16j22k.fixClipping-3qAKRb{background:rgba(0, 0, 0, 0.1);backdrop-filter: blur(5px);}
+
+
+/*Hide member list until hover (@Doggybootsy and @Blub) */
+  .membersWrap-2h-GB4.hiddenMembers-2dcs_q {
+      margin-left: 1px;
+      margin-right: -180px;
+      transition-duration: 0.5s;
+  }
+  .membersWrap-2h-GB4.hiddenMembers-2dcs_q:hover {
+      margin-right: 0px;
+  }
+
+
+/* Change the ring color when speaking in vc (@_david_) */
+  .avatarSpeaking-2IGMRN {box-shadow: inset 0 0 0 2px var(--unread-color),inset 0 0 0 3px var(--background-secondary)}                     /* Servers */ 
+  .border-Jn5IOt.speaking-B2MXPi {box-shadow: inset 0 0 0 2px var(--unread-color),inset 0 0 0 3px var(--background-floating)}              /* DMs */
+  .border-3dQmSY.speaking-WDn8Wm {box-shadow: inset 0 0 0 2px var(--unread-color), inset 0 0 0 3px #000}                                 /* Grid call */ 
+  .avatarSpeaking-2c8-9i {box-shadow: inset 0 0 0 2px var(--unread-color),inset 0 0 0 3px var(--background-secondary)}                     /* User menu (bottom left) */
+  .speaking-3dBKhR {box-shadow: inset 0 0 0 2px var(--unread-color),inset 0 0 0 3px var(--background-secondary)}                           /* Voice users */
