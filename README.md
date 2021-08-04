@@ -1,3 +1,4 @@
+
 # Minima+
 Just a simple theme for making Discord a bit cleaner (for my liking)
 
@@ -14,3 +15,6 @@ You do **NOT** need to enable transparency because that is for rounded corners. 
 - [ ] Enable transparency in the BetterDiscord settings (Windows users only)
 - [ ] Restart Discord
 - [ ] Enable the Minima+ theme
+
+#### Color Palette
+![Minima+ Color Palette(2)](https://user-images.githubusercontent.com/88403706/128129982-99852aa7-8ae4-4324-9c26-3715fc608bb0.png)
