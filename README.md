@@ -2,7 +2,7 @@
 # Minima+
 Just a simple theme for making Discord a bit cleaner (for my liking).
 
-For the best results, download the following plugins from the BetterDiscord official site. 
+For the [best results](https://user-images.githubusercontent.com/88403706/128266484-77b9f72f-7cc7-4814-bb18-ba29483e7f36.png), download the following plugins from the BetterDiscord official site. 
 > BetterFormattingRedux, BetterNsfwTag, DashToSpaceInChannelName, DateViewer, GameActivityToggle, HideEmbedLink, 
   PinDMs, QuickMuteChannels, ReadAllNotificationsButton, SpotifyControls, SupressReplyMentions (just QoL tbh), 
   TypingIndicator, and WhoReacted
