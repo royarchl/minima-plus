@@ -5,3 +5,12 @@ For the best results, download the following plugins from the BetterDiscord offi
 > BetterFormattingRedux, BetterNsfwTag, DashToSpaceInChannelName, DateViewer, GameActivityToggle, HideEmbedLink, 
   PinDMs, QuickMuteChannels, ReadAllNotificationsButton, SpotifyControls, SupressReplyMentions (just QoL tbh), 
   TypingIndicator, and WhoReacted
+
+#### MacOS Users
+You do **NOT** need to enable transparency because that is for rounded corners. Instead, edit the theme file in the `theme` portion of the BetterDiscord settings and remove the lines labelled under **Rounded Corners**.
+
+#### Installation
+- [ ] Download the theme
+- [ ] Enable transparency in the BetterDiscord settings (Windows users only)
+- [ ] Restart Discord
+- [ ] Enable the Minima+ theme
