@@ -55,7 +55,7 @@
 
 
 /* Adding "Minima+" after the watermark (top left) */
-  .typeWindows-1za-n7::after {
+  .typeWindows-1za-n7::after, .typeMacOS-3EmCyP::after {
       position: absolute;
       content: "Minima+";
       font-size: 14px;
@@ -258,6 +258,30 @@
     animation: 1.5s stage-open infinite;
   }
 
+
+/* Making Search Popout fit theme */
+#app-mount .container-3ayLPN {
+  background: var(--lighter-background) !important;
+  box-shadow: var(--lighter-background);
+}
+#app-mount .option-96V44q:after {
+  display: none;
+}
+#app-mount .option-96V44q.selected-rZcOL-,
+.input-2VB9rf {
+  background-color: var(--darker-background);
+}
+#app-mount .focused-2bY0OD {
+  background-color: var(--lighter-background);
+}
+#app-mount .searchAnswer-3Dz2-q,
+#app-mount .searchFilter-2ESiM3 {
+  background-color: var(--lighter-background);
+  color: var(--header-primary);
+}
+#app-mount .container-3ayLPN {
+  background-color: var(--lighter-background);
+}
 
 
 
