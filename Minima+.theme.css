@@ -55,7 +55,7 @@
 
 
 /* Adding "Minima+" after the watermark (top left) */
-  .typeWindows-1za-n7::after, .typeMacOS-3EmCyP::after {
+  .typeWindows-1za-n7::after {
       position: absolute;
       content: "Minima+";
       font-size: 14px;
@@ -162,7 +162,7 @@
   .username-1A8OIy {filter: grayscale(0.3) !important;}                                                                                    /* Desaturates username colors */
   [aria-label*="mention"] .icon-1DeIlz {                                                                                                   /* Changes the color of the # icon when pinged */
     color: var(--discord-red);                                                                                                             /**/
-    animation: 0.8s channel-mentioned-ping infinite;                                                                                       /**/
+    animation: 0.8s channel-mentioned-ping infinite ease-out;                                                                              /**/
   }                                                                                                                                        /**/
   [aria-label*="mention"]:hover .icon-1DeIlz {color: var(--discord-red); }                                                                 /* Maintains the # icon highlighted when hovering over the channel */
   .mentionsBadge-3tC7Mi {display: none }                                                                                                   /* Gets rid of the red ping (w/ number) next to channel when pinged */
@@ -206,7 +206,7 @@
   [aria-label="Share Your Screen"] {background-color: var(--darker-background) !important;}
   [aria-label="Muted"] .icon-2IuuZd {color: var(--discord-red);}
   [aria-label="Deafened"] .icon-2IuuZd {color: var(--discord-red);}
-  .content-1x5b-n [aria-label*="user"]:not([aria-label*="0"]) [aria-label*="Voice"] .icon-1DeIlz {color: var(--unread-color); animation: 2s stage-open infinite;}
+  .content-1x5b-n [aria-label*="user"]:not([aria-label*="0"]) [aria-label*="Voice"] .icon-1DeIlz {color: var(--unread-color); animation: 2s stage-open infinite ease-out;}
   .content-1x5b-n [aria-label*="user"] .name-23GUGE {color: #e4e4e4;}
 
 
@@ -233,7 +233,7 @@
     z-index: 1;
     background-color: var(--unread-color);
     border-radius: 10px;
-    animation: 2s channel-unread infinite;
+    animation: 2s channel-unread infinite ease-out;
   }
   
 
@@ -285,6 +285,7 @@
 
 
 
+
 /* STUFF FROM MORE EXPERIENCED MINDS THAT WERE PROVIDED IN #CSS-SNIPPETS */
 
 
@@ -331,7 +332,7 @@
 
 
 /* Resizable Channel/DM List (@Qb) */
-  :root { --sidebar-initial-width: 270px; }                                                                                                /* Set to 240px if you DON'T have the GameActivity plugin */                                                                                           /* Best size if you use GameActivityToggle Plugin */
+  :root { --sidebar-initial-width: 270px; }                                                                                                /* Set to 240px if you DON'T have the GameActivity plugin */
   .sidebar-2K8pFh {
       resize: horizontal;
       width: var(--sidebar-initial-width);
